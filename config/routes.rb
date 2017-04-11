@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   #root "pages#jquery_1"
 
-  resources :posts
+  resources :posts do
+    member do
+      post "like" => "posts#like"
+      post "unlike" => "posts#unlike"
+    end
+  end 
+
 
   root "posts#index"
 
