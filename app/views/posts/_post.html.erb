@@ -2,6 +2,7 @@
   <div class="panel-heading"><%= post.user.display_name %></div>
   <div class="panel-body">
     <span id="post-thumbsup-<%= post.id %>" class="label label-success"><%= post.likes.count %>👍</span>
+    <span id="post-thumbs-<%= post.id %>" class="label label-success"><%= post.collects.count %>❤️</span>
 
 
     <%= post.content %>
@@ -11,6 +12,10 @@
       <span id="post-like-<%= post.id %>">
         <%= render :partial => "like", :locals => { :post => post } %>
       </span>
+
+      <span id="post-collect-<%= post.id %>">
+        <%= render :partial => "collect", :locals => { :post => post } %>
+     </span>
 
 
    </div>
